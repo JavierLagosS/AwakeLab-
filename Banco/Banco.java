@@ -1,5 +1,6 @@
 package Banco;
 import java.util.*;
+
 public class Banco {
 	static Scanner scr = new Scanner(System.in);
 	static List<Cuenta> cuentas = new ArrayList<Cuenta>();
@@ -13,22 +14,26 @@ public class Banco {
 		boolean respBoolean = true;
 		boolean respBoolean2 = true;
 		String resp;
+		double monto;
 		do {
-			if (respBoolean == false)
+			if (respBoolean == false && respBoolean2 == false)
 				System.out.println("Ha ingresado una respuesta incorrecta, reintente:");
 			System.out.println("¿Desea ingresar un monto inicial? (S/N)");
 			resp = scr.nextLine();
 			respBoolean = validador(resp, "S", "s");
 			respBoolean2 = validador(resp, "N", "n");
 		} while (respBoolean == false && respBoolean2 == false);
-		double monto = 0;
+		monto = 0;
 		if (resp.compareTo("S") == 0 || resp.compareTo("s") == 0) {
 			System.out.print("Monto: ");
 			monto = scr.nextDouble();
 			cuentas.get(aux).setdCantidad(monto);
 			scr.nextLine();
 		}
+		respBoolean = true;
+		respBoolean2 = true;
 		do {
+			respBoolean = true;
 			do {
 				if (respBoolean == false)
 					System.out.println("Ha ingresado una respuesta incorrecta, reintente:");
@@ -42,9 +47,7 @@ public class Banco {
 			} else {
 				cuentas.get(aux).Ingreso(scr.nextDouble());
 			}
-			System.out.println("\n\nDETALLE TRANSACCIÓN\n");
-			System.out.println("Titular: " + cuentas.get(aux).getsTitular() + "\nMonto en cuenta: "
-					+ cuentas.get(aux).getdCantidad());
+			cuentas.get(aux).toString();
 			scr.nextLine();
 			System.out.println("\n¿Desea realizar otra operación? (S/N)");
 			resp = scr.nextLine();
@@ -64,5 +67,4 @@ public class Banco {
 		return respBoolean;
 	}
 
-	
 }
