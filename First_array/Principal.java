@@ -62,7 +62,5 @@ public class Principal {
 //		//ARROJA UN  ENTERO CON EL TAMAÑO DEL ARRAYLIST
 //	 System.out.println("TAMAÑO TOTAL"+ per1.size());
 	 
-	 
-	
 	 }
 	}
