@@ -10,6 +10,7 @@ public class Celular extends Telefono {
 
 	public static void realizarLlamada() {
 		// cambia el valor de la última llamada y suma la llamada a los minutos totales.
+		
 		System.out.println("La duracion de la ultima llamada es " + dultimaLlamada);
 		dtotalLlamadas = dtotalLlamadas + dtotalLlamadas;
 		System.out.println("La duracion de todas las llamadas es " + dtotalLlamadas);
