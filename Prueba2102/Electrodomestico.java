@@ -144,7 +144,7 @@ public class Electrodomestico extends Menu{
 		return scolor;
 	}
 
-public static Integer precioFinal(double dpeso) {
+public static Integer precioFinal(double dpeso ) {
 	int aux = 0, precioFinal = 0;
 	switch (s) {
     case "A" :
