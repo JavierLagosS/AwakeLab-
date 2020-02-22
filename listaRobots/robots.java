@@ -5,7 +5,7 @@ import java.util.*;
 import First_array.Paises;
 
 public class robots extends main {
-	static ArrayList<robots> robots = new ArrayList<>();
+	static ArrayList<  robots> robots = new ArrayList<robots>();
 	
 	
 	@Override
@@ -95,8 +95,8 @@ public class robots extends main {
 		}
 	}
     static void ordenar() {
-    	Arrays.sort(int robots);
-	
+    	
+      	
 	
 }
 
