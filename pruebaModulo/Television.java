@@ -1,4 +1,4 @@
-package Prueba2102;
+package pruebaModulo;
 
 public class Television extends Electrodomestico {
 //	 Sus atributos son resolución (en pulgadas) y sintonizador TDT (booleano), además de

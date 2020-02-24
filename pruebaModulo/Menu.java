@@ -1,4 +1,5 @@
-package Prueba2102;
+package pruebaModulo;
+import java.text.ParsePosition;
 import java.util.*;
 
 
@@ -60,12 +61,15 @@ public class Menu {
                     System.out.println("Cual es el peso?");
                     
                     electrodomesticos.get(i).setDpeso(Leer.nextDouble());
+                    
                     break;
                        
                     case 2:
                         System.out.println("Ingresaste una Television al sistema");
+                        
                         electrodomesticos.get(i).setStipo("Television");
                         // pidiendo los datos al usuario 
+                        
                         System.out.println("Cual es el precio del producto?");
                         electrodomesticos.get(i).setIprecioBase(Leer.nextInt());
                         
@@ -85,7 +89,7 @@ public class Menu {
                         electrodomesticos.get(i).setDpeso(Leer.nextDouble());
                         
                         System.out.println("Incluye sintonizador TDT ");
-//                        electrodomesticos.get(i).setBsintonizador(Leer.nextBoolean());
+                      
                         break;
                     case 3:
                         System.out.println("Ingresaste un Electrodomestico al sistema");
@@ -102,8 +106,11 @@ public class Menu {
                         System.out.println("cual es el consumo energetico (de la A hasta la F)");
                      
                         cconsumoEnergetico=Leer.next().charAt(0);
-                        Electrodomestico.ComprobarConsumoEnergetico( cconsumoEnergetico);
-                        electrodomesticos.get(i).setCconsumoEnergetico( cconsumoEnergetico);
+                        // ignoramos las minusculas en char 
+                        char cadena = Character.toUpperCase(cconsumoEnergetico);
+                        
+                        Electrodomestico.ComprobarConsumoEnergetico( cadena);
+                        electrodomesticos.get(i).setCconsumoEnergetico( cadena);
                         
                         System.out.println("Cual es el peso?");
                         
@@ -154,7 +161,7 @@ Electrodomestico electrodomestico = new Electrodomestico();
  System.out.println("La suma del precio de las lavadoras es de "+sumaLavadoras);
  System.out.println("");
  System.out.println("La suma del precio de las televisiones es de "+sumaTelevisiones);
- 
+ System.out.println("**************************************************************************************************");
  
 	}
 }

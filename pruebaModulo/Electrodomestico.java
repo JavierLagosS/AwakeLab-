@@ -1,4 +1,4 @@
-package Prueba2102;
+package pruebaModulo;
 
 import java.util.*;
 
@@ -111,16 +111,15 @@ public class Electrodomestico extends Menu {
 			
 				switch (consumoEnergetico) {
 	            case 'A' :
-	               System.out.println("Has seleccionado la opcion A");
 	               consumoEnergetico= 'A';
 	               
 	                break;
 	            case 'B':
-	                System.out.println("Has seleccionado la opcion 2");
+
 	                consumoEnergetico= 'B';
 	                break;
 	            case 'C':
-	                System.out.println("Has seleccionado la opcion 3");
+
 	                consumoEnergetico= 'C';
 	                break;
 	            case 'D':

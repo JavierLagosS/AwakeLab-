@@ -1,4 +1,4 @@
-package Prueba2102;
+package pruebaModulo;
 
 public class Lavadora extends Electrodomestico {
 	//Su atributo es carga, además de los atributos heredados
@@ -16,7 +16,7 @@ public class Lavadora extends Electrodomestico {
 	public Lavadora(int iprecioBase, double dpeso, char cconsumoEnergetico, String scolor, double dcarga, String stipo) {
 		// TODO Auto-generated constructor stub
 		super(stipo, iprecioBase,dpeso, cconsumoEnergetico,scolor);
-		this.dcarga= dcarga;
+		this.dpeso= dcarga;
 	}
 
 	public double getDcarga() {
