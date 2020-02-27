@@ -1,7 +1,9 @@
 package PruebaNotaMAx;
 import java.util.*;
 public class Menu {
-	
+	 static Electrodomestico listaElectrodomesticos[]=new Electrodomestico[10];
+	 static Scanner Leer= new Scanner(System.in);
+	  
 	public static double AleatorioPrecioInicial() {
 		   double  aleatorioPI= (int) (Math.random()*999+50);
 		   return aleatorioPI;
@@ -16,24 +18,24 @@ public class Menu {
 		
 		char randomCE = 'A' ;
 		
-		 int Acsii=(int) (Math.random()*70+65);
+		 int Acsii= (int)(Math.random()*5+0);
 		 switch(Acsii){
-         case 65 :
+         case 0 :
         	 randomCE='A';
              break;
-         case 66:
+         case 1:
         	 randomCE='B';
              break;
-         case 67:
+         case 2:
         	 randomCE='C';
              break;
-         case 68:
+         case 3:
         	 randomCE='D';
              break;
-         case 69:
+         case 4:
         	 randomCE='E';
              break;
-         case 70:
+         case 5:
         	 randomCE='F';
              break;
      }
@@ -42,25 +44,76 @@ public class Menu {
 	
 	}
 	
-	
+	public static String RandomColor() {
 
+		 String[] Colores = new String[5];
+		{
+			Colores[0] = "BLANCO";
+			Colores[1] = "NEGRO";
+			Colores[2] = "ROJO";
+			Colores[3] = "AZUL";
+		    Colores[4] = "GRIS";
+		}
+		int aux2 = (int) (Math.random()*(Colores.length));
+		String color = Colores[aux2];
+				return color;
+	}
+	public static int AleatorioPulgadas() {
+		   int  aleatorioP= (int) (Math.random()*60+20);
+		   return aleatorioP;
+	   }
+	
+	public static Boolean RandomBoleano() {
+
+
+		
+		  // create random object
+	      Random randomno = new Random();
+
+	      // get next next boolean value 
+	      boolean value = randomno.nextBoolean();
+	      return value;
+	}
+	
+//	static void CantidadElectrodomesticos(int cantidadElectrodomesticos) { // En Fase De Prueba
+//int aux;
+//
+//aux = (int) (Math.random() * 3); 
+//switch (aux) { // Utilizamos el valor aleatóreo de la variable "aux" para crear
+//case 0:
+//	listaElectrodomesticos[1]=new Electrodomestico(AleatorioPrecioInicial(),AleatorioPesoInicial(), RandomConsumoEnergeticochar(), RandomColor());
+//break;
+//case 1:
+//
+//listaElectrodomesticos[1]=new Lavadora(AleatorioPrecioInicial(), AleatorioPesoInicial(), RandomConsumoEnergeticochar(), RandomColor(),AleatorioPulgadas());
+//break;
+//default:
+//	listaElectrodomesticos[1]=new Television(AleatorioPrecioInicial(), AleatorioPesoInicial(), RandomConsumoEnergeticochar(), RandomColor(),AleatorioPulgadas(),RandomBoleano());
+//break;
+//}
+//}
+
+
+	
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	    //Creamos un array de Electrodomesticos
-        Electrodomestico listaElectrodomesticos[]=new Electrodomestico[10];
+      
        
         
                
         //Asignamos cada una de las posiciones como queramos
-        listaElectrodomesticos[0]=new Electrodomestico(AleatorioPrecioInicial(),AleatorioPesoInicial(), 'C', "Verde");
+        listaElectrodomesticos[0]=new Electrodomestico(AleatorioPrecioInicial(),AleatorioPesoInicial(), RandomConsumoEnergeticochar(), RandomColor());
         listaElectrodomesticos[1]=new Lavadora(AleatorioPrecioInicial(), AleatorioPesoInicial());
-        listaElectrodomesticos[2]=new Television(AleatorioPrecioInicial(), AleatorioPesoInicial(), 'E', "negro", 42, false);
+        listaElectrodomesticos[2]=new Television(AleatorioPrecioInicial(), AleatorioPesoInicial(), RandomConsumoEnergeticochar(), RandomColor(),AleatorioPulgadas(), RandomBoleano());
         listaElectrodomesticos[3]=new Lavadora();
-        listaElectrodomesticos[4]=new Electrodomestico(AleatorioPrecioInicial(), AleatorioPesoInicial(), 'D', "gris");
-        listaElectrodomesticos[5]=new Lavadora(AleatorioPrecioInicial(),AleatorioPesoInicial(), 'Z', "blanco", 40);
+        listaElectrodomesticos[4]=new Electrodomestico(AleatorioPrecioInicial(), AleatorioPesoInicial(), RandomConsumoEnergeticochar(), RandomColor());
+        listaElectrodomesticos[5]=new Lavadora(AleatorioPrecioInicial(),AleatorioPesoInicial(), RandomConsumoEnergeticochar(), RandomColor(),AleatorioPulgadas());
         listaElectrodomesticos[6]=new Television(AleatorioPrecioInicial(), AleatorioPesoInicial());
-        listaElectrodomesticos[7]=new Lavadora(AleatorioPrecioInicial(), AleatorioPesoInicial(), 'A', "verde", 15);
-        listaElectrodomesticos[8]=new Television(AleatorioPrecioInicial(), AleatorioPesoInicial(), 'C', "naranja", 30, true);
+        listaElectrodomesticos[7]=new Lavadora(AleatorioPrecioInicial(), AleatorioPesoInicial(), RandomConsumoEnergeticochar(), RandomColor(),AleatorioPulgadas());
+        listaElectrodomesticos[8]=new Television(AleatorioPrecioInicial(), AleatorioPesoInicial(), RandomConsumoEnergeticochar(), RandomColor(),AleatorioPulgadas(),RandomBoleano());
         listaElectrodomesticos[9]=new Electrodomestico(AleatorioPrecioInicial(), AleatorioPesoInicial());
    
         //Creamos las variables que usaremos para almacenar la suma de los precios
@@ -86,17 +139,16 @@ public class Menu {
                 sumaTelevisiones+=listaElectrodomesticos[i].precioFinal();
             }
         }
-   
+//        System.out.println("Cuantos electrodomesticos aleatorios desae crear"); fase de prueba
+//        int opciones= Leer.nextInt();
+//        CantidadElectrodomesticos(opciones);
+//        
+        
         //Mostramos los resultados
         System.out.println("La suma del precio de los electrodomesticos es de "+sumaElectrodomesticos);
         System.out.println("La suma del precio de las lavadoras es de "+sumaLavadoras);
         System.out.println("La suma del precio de las televisiones es de "+sumaTelevisiones);
-    for (int i = 0; i < listaElectrodomesticos.length; i++) {
-    	
-		System.out.println(AleatorioPrecioInicial());
-	    System.out.println(RandomConsumoEnergeticochar());
-		System.out.println(AleatorioPesoInicial());
-	}
+
     }
 
 	}
